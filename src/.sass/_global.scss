@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&subset=latin,cyrillic');
+/* Webfont: Lato-Bold */
+//noinspection ALL
+@font-face {
+    font-family: 'LatoWebBold';
+    src: url('../fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Bold.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Bold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Lato-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+$fa-font-path: "../fonts" !default;
+$fa-version: "4.4.0" !default;
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('#{$fa-font-path}/fontawesome-webfont.eot?v=#{$fa-version}');
+    src: url('#{$fa-font-path}/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Webfont: Lato-Semibold */
+//noinspection ALL
+/*
+@font-face {
+  font-family: 'LatoWebSemibold';
+  src: url('../fonts/Lato-Semibold.eot'); !* IE9 Compat Modes *!
+  src: url('../fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype'), !* IE6-IE8 *! url('../fonts/Lato-Semibold.woff2') format('woff2'), !* Modern Browsers *! url('../fonts/Lato-Semibold.woff') format('woff'), !* Modern Browsers *! url('../fonts/Lato-Semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+*/
+
+//noinspection ALL
+/* Webfont: Lato-Regular */
+//noinspection ALL
+@font-face {
+    font-family: 'LatoWeb';
+    src: url('../fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/*
+@font-face {
+  font-family: 'MerriweatherItalic';
+  src: url('../fonts/MerriweatherItalic.eot');
+  src: url('../fonts/MerriweatherItalic.eot') format('embedded-opentype'),
+  url('../fonts/MerriweatherItalic.woff2') format('woff2'),
+  url('../fonts/MerriweatherItalic.woff') format('woff'),
+  url('../fonts/MerriweatherItalic.ttf') format('truetype'),
+  url('../fonts/MerriweatherItalic.svg#MerriweatherItalic') format('svg');
+}
+*/
+
+//GLOBAL COLORS
+
+body {
+    position: relative;
+    @media all and (max-width: $screen-tablet) {
+        font-size: 12px;
+    }
+    @media all and (max-width: $screen-phone) {
+        font-size: 10px;
+        h1 {
+            font-size: floor(($font-size-base * 1.8));
+        }
+        h2 {
+            font-size: floor(($font-size-base * 1.6));
+        }
+        h3 {
+            font-size: ceil(($font-size-base * 1.1));
+        }
+        h4 {
+            font-size: $font-size-base;
+        }
+        h5 {
+            font-size: ceil(($font-size-base * .9));
+        }
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.bold {
+    font-family: 'LatoWebBold', sans-serif;
+}
+
+/*
+i {
+  font-family: 'MerriweatherItalic', sans-serif;
+}
+*/
+
+.color-white {
+    color: #ffffff;
+}
+
+.color-link {
+    color: $link-color;
+}
+
+.btn-lg {
+    font-size: 1.3em;
+}
+
+.btn-rounded {
+    border-radius: 2em;
+}
+
+a, button, input, textarea {
+    &:focus,
+    &:active {
+        outline: none !important;
+    }
+}
+
+//ACTION COUNTER FORM
+.action-form {
+    text-align: left;
+    @media all and (max-width: $screen-sm-max) {
+        text-align: center;
+    }
+    input {
+        width: 100%;
+        font-size: 1.1em;
+        height: 3em;
+        border: 1px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .input-list {
+        .a-form {
+            display: inline-block;
+            width: 23%;
+            vertical-align: middle;
+            &:nth-child(1) {
+                width: 35%;
+            }
+            &:nth-last-child(1) {
+                width: 15%;
+            }
+            @media all and (max-width: $screen-sm-min) {
+                &:nth-child(1) {
+                    width: 90%;
+                }
+                &:nth-last-child(1) {
+                    width: 60%;
+                }
+                width: 90%;
+                display: block;
+                margin: 0 auto .3em;
+            }
+        }
+    }
+}
+
+//GLOBAL CAROUSEL
+
+/*
+.carousel-arrow {
+  width: 1.5em;
+  height: 3em;
+  position: absolute;
+  top: 50%;
+  margin-top: -3.5em;
+  &.left {
+    background: transparent url("../img/carousel-left-arrow.png") no-repeat center;
+    background-size: cover;
+    left: 2em;
+    right: auto;
+    @media all and (max-width: $screen-phone) {
+      left: 10px;
+    }
+  }
+  &.right {
+    background: transparent url("../img/carousel-right-arrow.png") no-repeat center;
+    background-size: cover;
+    right: 2em;
+    left: auto;
+    @media all and (max-width: $screen-phone) {
+      right: 10px;
+    }
+  }
+  @media all and (max-width: $screen-phone) {
+    width: 1em;
+    height: 2em;
+  }
+}
+*/
+
+.feedback-carousel, .warranty-carousel {
+    .carousel-control {
+        background: none;
+    }
+    .carousel-inner .active.left {
+        &.active {
+            .left {
+                left: -33%;
+            }
+        }
+    }
+    .carousel-inner {
+        .next {
+            left: 33%;
+        }
+    }
+    .carousel-inner {
+        .prev {
+            left: -33%;
+        }
+    }
+    .item:not(.prev) {
+        visibility: visible;
+    }
+    .item.right:not(.prev) {
+        visibility: hidden;
+    }
+    .rightest {
+        visibility: visible;
+    }
+    .carousel-control {
+        width: 10%;
+    }
+
+}
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .carousel-control {
+        z-index: 2;
+    }
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.spacer {
+    font-size: 1px;
+    &.quad {
+        padding-top: 100%;
+    }
+}
+
+.form-feedback {
+    background-color: white;
+    padding: 2em 2em .5em;
+    &.production-modal-form {
+        @media (min-width: $screen-lg-min) {
+            padding-left: 0;
+        }
+    }
+    &.staff-form {
+        background-color: transparent;
+        padding: 0;
+    }
+    input[type="text"], button[type="submit"] {
+        height: 3em;
+    }
+    input[type="text"], button[type="submit"], textarea {
+        font-size: 1.1em;;
+        border: 1px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 1em;
+    }
+    input[type="text"], textarea {
+        width: 100%;
+        border: 1px solid lightgray;
+        &:active,
+        &:focus {
+            border-color: $brand-primary;
+        }
+    }
+    button[type="submit"] {
+        float: right;
+    }
+    textarea {
+        resize: none;
+        padding: 10px 16px;
+    }
+    .header-form {
+        margin: 0 0 1em;
+    }
+}
+
+.production-modal-form {
+    .heading2, .heading, .phone-heading {
+        text-align: center;
+    }
+    .heading2 {
+        font-size: 1.4em;
+        margin-bottom: .8em;
+    }
+    .heading, .phone-heading, .heading2 {
+        font-weight: bold;
+    }
+    .phone-heading, .heading2 {
+        font-size: 2em;
+        line-height: 1;
+    }
+    .heading, .check-list {
+        font-size: 1.2em;
+    }
+    .fa-phone {
+        margin-right: 10px;
+    }
+    .check-list {
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            content: "\f00c";
+            font-family: 'FontAwesome', serif;
+            position: absolute;
+            left: 0;
+            color: $brand-primary;
+        }
+    }
+
+    button[type="submit"] {
+        float: none;
+        width: 100%;
+    }
+}
+
+.brand-box {
+    margin: 0 auto;
+    float: none;
+    display: inline-block;
+}
+
+.underline {
+    border-bottom: 1px solid white;
+    margin-bottom: 4px;
+}
+
+.little-less {
+    font-size: 95%;
+}
+
+.brand-text {
+    padding-left: 4.5em;
+}
+
+.animated {
+    opacity: 0;
+    &.visible {
+        opacity: 1;
+    }
+}
