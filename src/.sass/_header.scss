@@ -6,6 +6,7 @@
     @media (min-width: $screen-md-max) {
         text-align: center;
     }
+    background: url("../img/nav-bg.jpg");
 }
 
 .navbar-brand {
@@ -19,7 +20,7 @@
     display: inline-block;
     font-size: 0;
     float: none;
-    font-weight: 500;
+    font-weight: 600;
     li {
         font-size: $font-size-base;
         &.active {
@@ -45,9 +46,9 @@
 
 .header {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 6em;
     @media (min-width: $screen-tablet) {
-        background: url("../img/header-bg-hires.jpg") no-repeat;
+        background: url("../img/header-bg-hires.jpg") no-repeat center;
         background-size: cover;
     }
     background: url("../img/header-bg-lowres.jpg") no-repeat;
@@ -56,9 +57,69 @@
     min-height: 720px;
     .main-header {
         text-align: center;
-        font-weight: 500;
+        font-weight: 600;
+        @media (min-width: $screen-lg-min) {
+            font-size: 3.2em;
+        }
     }
     .sub-main-header {
         font-weight: 300;
     }
+}
+
+.header-manifest {
+    font-size: 1.2em;
+    margin-top: 4em;
+}
+
+.header-links-block {
+    margin-top: 1em;
+    .start-modal {
+        margin-top: 3em;
+    }
+    .button-down {
+        background: transparent;
+        border: none;
+        color: white;
+        display: block;
+        border-radius: 100%;
+        font-size: 2em;
+        width: 2em;
+        margin: 1em auto 0;
+    }
+}
+
+.body-form {
+    &.form-discount {
+        .form-header {
+            padding: 0 5px;
+        }
+        position: absolute;
+        max-width: 295px;
+        top: 17em;
+        right: 5%;
+        label {
+            font-size: 11px;
+        }
+        .i-icons {
+            &.airplane {
+                margin-top: 1.8em;
+            }
+        }
+        .sub-heading {
+            font-size: 1.4em;
+        }
+        .submit-wrapper {
+            margin-top: 1.5em;
+            padding: 5px 0 0;
+        }
+        /*        @media (max-width: $screen-lg-desktop) {
+                    top: 5px;
+                    right: 5px;
+                }*/
+        /*        @media only screen and(max-width: $screen-md-min) {
+                    display: none;
+                }*/
+    }
+
 }

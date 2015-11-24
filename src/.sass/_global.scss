@@ -1,6 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&subset=latin,cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,cyrillic');
 /* Webfont: Lato-Bold */
 //noinspection ALL
+
+@font-face {
+    font-family: 'Ionicons';
+    src: url("../fonts/ionicons.eot?v=2.0.0");
+    src: url("../fonts/ionicons.eot?v=2.0.0#iefix") format("embedded-opentype"),
+    url("../fonts/ionicons.ttf?v=2.0.0") format("truetype"),
+    url("../fonts/ionicons.woff?v=2.0.0") format("woff"),
+    url("../fonts/ionicons.svg?v=2.0.0#Ionicons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'LatoWebBold';
     src: url('../fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
@@ -12,20 +24,16 @@
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
-//font-family: 'Open Sans', sans-serif;
-$fa-font-path: "../fonts" !default;
-$fa-version: "4.4.0" !default;
+
+//FONT AWESOME
 @font-face {
     font-family: 'FontAwesome';
-    src: url('#{$fa-font-path}/fontawesome-webfont.eot?v=#{$fa-version}');
-    src: url('#{$fa-font-path}/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
-    url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
-    url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
-    url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
-    url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+    src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
 
 /* Webfont: Lato-Semibold */
 //noinspection ALL
@@ -102,16 +110,11 @@ body {
     font-family: 'LatoWebBold', sans-serif;
 }
 
-/*
-i {
-  font-family: 'MerriweatherItalic', sans-serif;
-}
-*/
-
 .color-white {
     color: #ffffff;
 }
-.color-primary{
+
+.color-primary {
     color: $brand-primary;
 }
 
@@ -134,150 +137,26 @@ a, button, input, textarea {
     }
 }
 
-//ACTION COUNTER FORM
-.action-form {
-    text-align: left;
-    @media all and (max-width: $screen-sm-max) {
-        text-align: center;
+.section-header {
+    text-align: center;
+    max-width: 790px;
+    margin: 0 auto;
+    h2 {
+        font-weight: 500;
     }
-    input {
-        width: 100%;
-        font-size: 1.1em;
-        height: 3em;
-        border: 1px;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-    .input-list {
-        .a-form {
-            display: inline-block;
-            width: 23%;
-            vertical-align: middle;
-            &:nth-child(1) {
-                width: 35%;
-            }
-            &:nth-last-child(1) {
-                width: 15%;
-            }
-            @media all and (max-width: $screen-sm-min) {
-                &:nth-child(1) {
-                    width: 90%;
-                }
-                &:nth-last-child(1) {
-                    width: 60%;
-                }
-                width: 90%;
-                display: block;
-                margin: 0 auto .3em;
-            }
-        }
+    .section-subheader {
+        font-size: 1.2em;
+        color: #898989;
+        line-height: 1.5;
     }
 }
-
-//GLOBAL CAROUSEL
-
-/*
-.carousel-arrow {
-  width: 1.5em;
-  height: 3em;
-  position: absolute;
-  top: 50%;
-  margin-top: -3.5em;
-  &.left {
-    background: transparent url("../img/carousel-left-arrow.png") no-repeat center;
-    background-size: cover;
-    left: 2em;
-    right: auto;
-    @media all and (max-width: $screen-phone) {
-      left: 10px;
-    }
-  }
-  &.right {
-    background: transparent url("../img/carousel-right-arrow.png") no-repeat center;
-    background-size: cover;
-    right: 2em;
-    left: auto;
-    @media all and (max-width: $screen-phone) {
-      right: 10px;
-    }
-  }
-  @media all and (max-width: $screen-phone) {
-    width: 1em;
-    height: 2em;
-  }
-}
-*/
-
-.feedback-carousel, .warranty-carousel {
-    .carousel-control {
-        background: none;
-    }
-    .carousel-inner .active.left {
-        &.active {
-            .left {
-                left: -33%;
-            }
-        }
-    }
-    .carousel-inner {
-        .next {
-            left: 33%;
-        }
-    }
-    .carousel-inner {
-        .prev {
-            left: -33%;
-        }
-    }
-    .item:not(.prev) {
-        visibility: visible;
-    }
-    .item.right:not(.prev) {
-        visibility: hidden;
-    }
-    .rightest {
-        visibility: visible;
-    }
-    .carousel-control {
-        width: 10%;
-    }
-
-}
-
-.carousel-fade {
-    .carousel-inner {
-        .item {
-            transition-property: opacity;
-        }
-
-        .item,
-        .active.left,
-        .active.right {
-            opacity: 0;
-        }
-
-        .active,
-        .next.left,
-        .prev.right {
-            opacity: 1;
-        }
-
-        .next,
-        .prev,
-        .active.left,
-        .active.right {
-            left: 0;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-    .carousel-control {
-        z-index: 2;
-    }
-}
-
 .no-padding {
     padding: 0;
+}
+
+.block-centered {
+    display: block;
+    margin: 0 auto;
 }
 
 .spacer {
@@ -287,6 +166,7 @@ a, button, input, textarea {
     }
 }
 
+//FORMS
 .form-feedback {
     background-color: white;
     padding: 2em 2em .5em;
@@ -330,62 +210,42 @@ a, button, input, textarea {
     }
 }
 
-.production-modal-form {
-    .heading2, .heading, .phone-heading {
-        text-align: center;
+.i-icons {
+    position: relative;
+    &::before {
+        font-family: 'Ionicons';
+        position: absolute;
+        height: 40px;
+        width: 20px;
+        top: 3px;
+        font-size: 22px;
+        display: block;
+        padding-top: 7px;
+        left: 7px;
+        color: $brand-primary;
     }
-    .heading2 {
-        font-size: 1.4em;
-        margin-bottom: .8em;
+    &.airplane::before {
+        content: '\f2c3';
+        left: -24px;
+        padding-top: 4px;
     }
-    .heading, .phone-heading, .heading2 {
-        font-weight: bold;
+    &.person::before {
+        content: '\f213';
+        left: -24px;
+        padding-top: 4px;
     }
-    .phone-heading, .heading2 {
-        font-size: 2em;
-        line-height: 1;
-    }
-    .heading, .check-list {
-        font-size: 1.2em;
-    }
-    .fa-phone {
-        margin-right: 10px;
-    }
-    .check-list {
-        padding-left: 30px;
-        position: relative;
-        &::before {
-            content: "\f00c";
-            font-family: 'FontAwesome', serif;
-            position: absolute;
-            left: 0;
-            color: $brand-primary;
-        }
-    }
-
-    button[type="submit"] {
-        float: none;
-        width: 100%;
+    &.telephone::before {
+        content: '\f4b9';
+        left: -24px;
+        padding-top: 4px;
     }
 }
 
-.brand-box {
-    margin: 0 auto;
-    float: none;
-    display: inline-block;
-}
-
-.underline {
-    border-bottom: 1px solid white;
-    margin-bottom: 4px;
-}
-
-.little-less {
-    font-size: 95%;
-}
-
-.brand-text {
-    padding-left: 4.5em;
+.line-icon {
+    display: block;
+    height: 10px;
+    background: url("../img/icons/icon-line.png") center no-repeat;
+    margin-bottom: 1em;
 }
 
 .animated {
@@ -393,4 +253,84 @@ a, button, input, textarea {
     &.visible {
         opacity: 1;
     }
+}
+
+//FA ICONS
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 'FontAwesome';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-icon {
+    //display: inline-block;
+    //font: normal normal normal 14px/1 'FontAwesome';
+    font-size: inherit; // can't have font-size inherit on line above, so need to override
+    text-rendering: auto; // optimizelegibility throws things off #1094
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+.use-icon:before {
+    left: 0;
+    position: absolute;
+    color: $brand-primary;
+    font: normal normal normal 1.2em/1 'FontAwesome';
+}
+
+.fa-chevron-down:before {
+    content: "\f107";
+    font-family: 'FontAwesome';
+}
+
+.fa-street-view:before {
+    content: "\f21d";
+}
+
+.fa-user-md:before {
+    content: "\f0f0";
+}
+
+.fa-car:before {
+    content: "\f1b9";
+}
+
+.fa-motorcycle:before {
+    content: "\f21c";
+}
+
+.fa-bicycle:before {
+    content: "\f206";
+}
+
+.fa-anchor:before {
+    content: "\f13d";
+}
+
+.fa-paw:before {
+    content: "\f1b0";
+}
+
+.fa-building-o:before {
+    content: "\f0f7";
+}
+
+.fa-subway:before {
+    content: "\f239";
+}
+
+.fa-safari:before {
+    content: "\f267";
+}
+
+.fa-binoculars:before {
+    content: "\f1e5";
+}
+
+.fa-file-text-o:before {
+    content: "\f0f6";
 }

@@ -4,6 +4,9 @@ $white: #fff;
 $black: #000;
 $black_40: rgba(0, 0, 0, 0.4);
 $black_10: rgba(0, 0, 0, 0.1);
+$color_celeste_approx: #ccc;
+$color_mountain_mist_approx: #999999;
+
 
 .flip-clock-wrapper {
     text-align: center;
@@ -19,7 +22,7 @@ $black_10: rgba(0, 0, 0, 0.1);
         color: $color_celeste_approx;
         &:hover {
             color: $white;
-        }
+    }
     }
     ul {
         list-style: none;
@@ -51,7 +54,7 @@ $black_10: rgba(0, 0, 0, 0.1);
                 margin: 0 !important;
                 overflow: visible !important;
                 cursor: default !important;
-                border-radius: 0;
+        border-radius: 0;
                 div {
                     z-index: 1;
                     position: absolute;
@@ -62,8 +65,8 @@ $black_10: rgba(0, 0, 0, 0.1);
                     overflow: hidden;
                     outline: 1px solid transparent;
                     .shadow {
-                        position: absolute;
-                        width: 100%;
+            position: absolute;
+            width: 100%;
                         height: 100%;
                         z-index: 2;
                     }
@@ -72,7 +75,7 @@ $black_10: rgba(0, 0, 0, 0.1);
                         top: 0;
                         div.inn {
                             top: 0;
-                        }
+            }
                     }
                     &.down {
                         transform-origin: 50% 0;
@@ -81,7 +84,7 @@ $black_10: rgba(0, 0, 0, 0.1);
                         border-bottom-right-radius: 0;
                         div.inn {
                             bottom: 0;
-                        }
+            }
                     }
                     div.inn {
                         position: absolute;
@@ -95,12 +98,12 @@ $black_10: rgba(0, 0, 0, 0.1);
                         font-size: 60px;
                         line-height: 80px
                     }
-                }
+        }
             }
             &.flip-clock-active {
                 z-index: 3;
             }
-        }
+    }
         &.play li {
             &.flip-clock-before {
                 z-index: 3;
@@ -112,12 +115,12 @@ $black_10: rgba(0, 0, 0, 0.1);
                         background: linear, to bottom, $black_10 0, $black 100%;
                         animation: show 0.5s linear both;
                     }
-                }
+        }
                 .down .shadow {
                     background: linear, top, $black 0, $black_10 100%;
                     background: linear, to bottom, $black 0, $black_10 100%;
                     animation: show 0.5s linear both;
-                }
+        }
             }
             &.flip-clock-active {
                 animation: asd 0.5s 0.5s linear both;
@@ -137,19 +140,19 @@ $black_10: rgba(0, 0, 0, 0.1);
                     animation: hide 0.5s 0.3s linear both;
                 }
             }
-        }
+    }
     }
     &.clearfix {
         *zoom: 1;
-        &:before {
-            content: " ";
-            display: table;
-        }
-        &:after {
-            content: " ";
-            display: table;
-            clear: both;
-        }
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
     }
     &:before {
         content: " ";
@@ -405,7 +408,7 @@ $black_10: rgba(0, 0, 0, 0.1);
                 display: none;
             }
 
-        }
+    }
     }
 }
 
@@ -422,7 +425,7 @@ $black_10: rgba(0, 0, 0, 0.1);
             height: 1px;
             width: 40px;
             background: #9d9d9d url("../img/flip/flip-clock-line.png")
-        }
+    }
         background-size: cover;
         background-position: center;
     }
@@ -445,17 +448,17 @@ $black_10: rgba(0, 0, 0, 0.1);
     &.minutes {
         .flip-clock-label {
             right: -70px;
-        }
+    }
     }
     &.hours {
         .flip-clock-label {
             right: -66px;
-        }
+    }
     }
     &.seconds {
         .flip-clock-label {
             right: -71px;
-        }
+    }
     }
 }
 
@@ -474,10 +477,10 @@ $black_10: rgba(0, 0, 0, 0.1);
         text-align: right;
         .up {
             background: url("../img/flip/flip-top-left.png") no-repeat;
-        }
+    }
         .down {
             background: url("../img/flip/flip-bottom-left.png") no-repeat;
-        }
+    }
     }
     .flip:nth-of-type(even) {
         margin-left: 0;
