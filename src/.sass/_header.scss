@@ -1,0 +1,64 @@
+//BLOCK1 Header
+
+//NAV
+.navbar-default {
+    font-size: 0;
+    @media (min-width: $screen-md-max) {
+        text-align: center;
+    }
+}
+
+.navbar-brand {
+    padding: $navbar-padding-vertical/2 0 $navbar-padding-vertical/2;
+    @media (min-width: 768px) {
+        margin-left: 0;
+    }
+}
+
+.navbar-nav {
+    display: inline-block;
+    font-size: 0;
+    float: none;
+    font-weight: 500;
+    li {
+        font-size: $font-size-base;
+        &.active {
+            box-shadow: inset 0 -7px 0 0 $brand-primary;
+        }
+        a {
+            @media (min-width: 768px) {
+                text-transform: uppercase;
+            }
+        }
+    }
+    .contact-top {
+        height: $navbar-height;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .start-modal {
+        height: $navbar-height;
+    }
+}
+
+.header {
+    text-align: center;
+    padding-top: 10%;
+    @media (min-width: $screen-tablet) {
+        background: url("../img/header-bg-hires.jpg") no-repeat;
+        background-size: cover;
+    }
+    background: url("../img/header-bg-lowres.jpg") no-repeat;
+    background-size: cover;
+    //TEMP
+    min-height: 720px;
+    .main-header {
+        text-align: center;
+        font-weight: 500;
+    }
+    .sub-main-header {
+        font-weight: 300;
+    }
+}

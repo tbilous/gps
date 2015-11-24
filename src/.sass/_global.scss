@@ -12,7 +12,7 @@
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
-
+//font-family: 'Open Sans', sans-serif;
 $fa-font-path: "../fonts" !default;
 $fa-version: "4.4.0" !default;
 @font-face {
@@ -110,6 +110,9 @@ i {
 
 .color-white {
     color: #ffffff;
+}
+.color-primary{
+    color: $brand-primary;
 }
 
 .color-link {

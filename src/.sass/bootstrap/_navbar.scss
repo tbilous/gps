@@ -171,13 +171,14 @@
     > img {
         display: block;
     }
-
+    //to do remove
+/*
     @media (min-width: $grid-float-breakpoint) {
         .navbar > .container &,
         .navbar > .container-fluid & {
             margin-left: -$navbar-padding-horizontal;
         }
-    }
+    }*/
 }
 
 // Navbar toggle
@@ -264,8 +265,8 @@
         > li {
             float: left;
             > a {
-                padding-top: $navbar-padding-vertical;
-                padding-bottom: $navbar-padding-vertical;
+                padding-top: $navbar-padding-vertical*1.5;
+                padding-bottom: $navbar-padding-vertical/2;
             }
         }
     }
