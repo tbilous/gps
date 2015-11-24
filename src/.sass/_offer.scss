@@ -1,0 +1,45 @@
+.offer{
+    .offer-text{
+        text-transform: uppercase;
+        padding: 2em 0;
+        max-width: 630px;
+        margin: 0 auto;
+    }
+    .offer-header{
+        font-size: 4em;
+        font-weight: 600;
+    }
+    .offer-subheader{
+        font-size: 3em;
+        font-weight: 400;
+    }
+    .offer-regular{
+        font-size: 2em;
+        font-weight: 300;
+    }
+}
+.offer-form{
+    background-color: rgba(255,255,255,.5);
+    padding: 2em;
+    p{
+        font-size: 1.2em;
+    }
+    .phone-offer{
+        list-style: url("../img/icons/phone-blackr-style.png");
+        li{
+            font-size: 2em;
+            font-weight: 600;
+        }
+    }
+    .ask-header{
+        margin: 1.2em auto .8em;
+        font-size: 1.8em;
+        text-align: center;
+    }
+    .offer-ask{
+        list-style: url("../img/icons/offer-style.png");
+        li{
+            font-size: 1.2em;
+        }
+    }
+}
