@@ -1,0 +1,22 @@
+.facilities-sections {
+    padding: 3em 0;
+    .section-header {
+        margin-bottom: 2em;
+    }
+    .section-body {
+        padding: 3em 0;
+        background: url("../img/facilities-bg.jpg") no-repeat;
+        background-size: cover;
+        h2 {
+            max-width: 480px;
+        }
+    }
+    .list-facilities {
+        padding: 2em 0;
+        color: #898989;
+        li {
+            padding: 8px 0 8px 60px;
+            list-style: url("../img/icons/arrow.png");
+        }
+    }
+}

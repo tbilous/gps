@@ -1,0 +1,55 @@
+.section-price {
+    padding: 3em 0;
+    .section-header {
+        margin-bottom: 4em;
+    }
+    .table-responsive {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+}
+
+.table-price {
+    tr {
+        border-left: 1px solid $table-border-color;
+        border-right: 1px solid $table-border-color;
+        &:nth-last-of-type(1) {
+            border-bottom: 1px solid $table-border-color;
+        }
+    }
+    td, th {
+        line-height: 1.8 !important;
+    }
+    th {
+        font-size: 1.2em;
+        &:nth-of-type(2), &:nth-of-type(3) {
+            text-align: center;
+        }
+
+    }
+    td {
+        font-weight: 300;
+        &:nth-of-type(2), &:nth-of-type(3) {
+            text-align: center;
+        }
+
+    }
+    .grey-row {
+        background-color: $table-bg-accent !important;
+    }
+}
+
+.list-arguments {
+    margin-top: 3em;
+}
+
+.argument {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    .argument-text {
+        font-size: 1.2em;
+        margin-left: 8%;
+        font-weight: 300;
+    }
+}

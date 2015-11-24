@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&subset=latin,cyrillic');
 /* Webfont: Lato-Bold */
 //noinspection ALL
 
@@ -107,7 +107,11 @@ body {
 }
 
 .bold {
-    font-family: 'LatoWebBold', sans-serif;
+    font-weight: 700;
+}
+
+.extra-bold {
+    font-weight: 800;
 }
 
 .color-white {
@@ -118,17 +122,15 @@ body {
     color: $brand-primary;
 }
 
-.color-link {
-    color: $link-color;
+.light {
+    font-weight: 300;
 }
 
 .btn-lg {
-    font-size: 1.3em;
+    font-size: 1em;
+    height: 3.5em;
 }
 
-.btn-rounded {
-    border-radius: 2em;
-}
 
 a, button, input, textarea {
     &:focus,
