@@ -23,6 +23,9 @@
 }());
 
 $(document).ready(function () {
+    // Scroll MONITOR
+
+
 // SCROLL TO ANCHOR
     function scrollIfAnchor(href) {
         href = typeof(href) === 'string' ? href : $(this).attr('href');
@@ -31,7 +34,7 @@ $(document).ready(function () {
             var $target = $(href);
             if ($target.length) {
                 var time = 1000;
-                $('html, body').animate({scrollTop: $target.offset().top - fromTop}, time);
+                $('html, body').animate({ scrollTop: $target.offset().top - fromTop }, time);
                 if (history && 'pushState' in history) {
                     history.pushState({}, document.title, window.location.pathname + href);
                     return false;
@@ -42,11 +45,11 @@ $(document).ready(function () {
 
     $('body').on('click', '.anchor', scrollIfAnchor);
 
-//SPY MENU
+// SPY MENU
 // Cache selectors
     var lastId,
         topMenu = $("#navbar"),
-        topMenuHeight = topMenu.outerHeight()*1.5,
+        topMenuHeight = topMenu.outerHeight() * 1.5,
 // All list items
         menuItems = topMenu.find("a"),
 // Anchors corresponding to menu items
@@ -90,4 +93,38 @@ $(document).ready(function () {
                 .end().filter("[href=#" + id + "]").parent().addClass("active");
         }
     });
+
+    // CENTERED MODAL
+    $(".start-modal").click(function () {
+        var d_tar = $(this).attr('data-target');
+        $(d_tar).show();
+        var modal_he = $(d_tar).find('.modal-dialog .modal-content').height();
+        var win_height = $(window).height();
+        var marr = win_height - modal_he;
+        $('.modal-dialog').css('margin-top', marr / 2);
+    });
+
+    // MAIL FORM
+    $("form").submit(function () {
+        var formID = $(this).attr("id");
+        $.ajax({
+            type: "POST",
+            url: "mail.php", // mail script
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find("input").val("");
+            $('#' + formID).trigger("reset");
+            $('#callbackModal').modal('show');
+        });
+        var parent = $(this).parents('.modal');
+        var modalID = parent.attr("id");
+
+        if ($('#' + modalID).hasClass('in')) {
+            $('#' + modalID).modal('hide');
+            return false;
+        } else {
+            return false;
+        }
+    });
+
 });

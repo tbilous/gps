@@ -7,14 +7,27 @@
     <meta name="description" content="Unitrack GPS">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
-    <!--{{CUT-START}}-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!--{{CUT-END}}-->
 
-    <link rel="stylesheet" href="css/{{MAIN_CSS_FILE}}">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
@@ -57,7 +70,8 @@
                         </div>
                     </li>
                     <li class="">
-                        <button class="btn btn-primary start-modal">Заказать звонок<span
+                        <button class="btn btn-primary start-modal" data-toggle="modal" data-target="#feedbackModal">
+                            Заказать звонок<span
                             class="sr-only">(current)</span></button>
                     </li>
                 </ul>
@@ -82,7 +96,9 @@
 
                     <div class=" header-links-block text-center">
                         <a class="bold block-centered anchor" href="#price">Посмотреть тарифы ›</a>
-                        <button class="btn btn-primary btn-md start-modal">ЗАКАЗАТЬ GPS МОНИТОРИНГ</button>
+                        <button class="btn btn-primary btn-md start-modal" data-toggle="modal"
+                                data-target="#feedbackModal">ЗАКАЗАТЬ GPS МОНИТОРИНГ
+                        </button>
                         <a href="#footer" class="btn fa fa-icon fa-chevron-down button-down anchor"></a>
                     </div>
                 </div>
@@ -115,7 +131,9 @@
             </label>
 
             <div class="submit-wrapper">
-                <div class="clock" id="top-clock">
+                До конца акции:
+                <div class="clock" id="clock">
+
 
                 </div>
             </div>
@@ -172,7 +190,7 @@
 
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <input type="hidden" value="Заказ мониторинга">
+                    <input type="hidden" name="head" value="Заказ мониторинга">
 
                     <div class="input-wrapper">
                         <input class="man" type="text" name="name" required placeholder="Введите имя">
@@ -284,7 +302,9 @@
                         </li>
                         <li>Сроки хранения информации о треках - месяц</li>
                     </ul>
-                    <button class="btn btn-lg btn-primary center-block">ЗАКАЗАТЬ GPS МОНИТОРИНГ</button>
+                    <button class="btn btn-lg btn-primary center-block start-modal" data-toggle="modal"
+                            data-target="#feedbackModal">ЗАКАЗАТЬ GPS МОНИТОРИНГ
+                    </button>
                 </div>
             </div>
         </div>
@@ -474,7 +494,9 @@
                         <li>Точное определение координат - до 10 метров и четкое взаимодействие с сервером по GPRS</li>
 
                     </ul>
-                    <button class="btn btn-lg btn-primary start-modal">ЗАКАЗАТЬ</button>
+                    <button class="btn btn-lg btn-primary start-modal" data-toggle="modal" data-target="#feedbackModal">
+                        ЗАКАЗАТЬ
+                    </button>
                 </div>
             </div>
         </div>
@@ -597,7 +619,7 @@
                             </div>
 
                             <div class="input-group i-icons text">
-                            <textarea class="phone-input" type="text" name="phone"
+                            <textarea class="phone-input" type="text" name="comment"
                                       placeholder="введите сообщение"></textarea>
                             </div>
 
@@ -672,12 +694,54 @@
 
 </footer>
 
+<div class="modal fade callback-modal " id="callbackModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h2 class="color-khaki">Спасибо за обращение! <br> Сейчас Вам перезвонит мастер</h2>
+                <button class="btn btn-lg btn-info" data-dismiss="modal" aria-label="Close">Закрыть окно</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade feedback-modal" id="feedbackModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <h2 class="modal-header orange">перезвоним за <br/> две минуты</h2>
+
+                <p class="text-center">Заполните форму и мы свяжемся с вами</p>
+
+                <form id="requestForm" class="text-center">
+                    <input name="head" type="hidden" value="Order"/>
+
+                    <div class="input-group">
+                        <input name="name" class="name_input" type="text" required="required"
+                               placeholder="Введите имя"/>
+                    </div>
+                    <div class="input-group">
+                        <input name="phone" class="name_input" type="text" required="required"
+                               placeholder="Введите телефон"/>
+                    </div>
+
+                    <input type="submit" class="btn btn-lg btn-primary"/>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--{{CUT-START}}-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 <script src="assets/js/collapse.js"></script>
 <script src="assets/js/dropdown.js"></script>
 <script src="assets/js/modal.js"></script>
+<script src="assets/js/scrollMonitor.js"></script>
 <!--{{CUT-END}}-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
@@ -685,8 +749,41 @@
 
 <script src="js/{{MAIN_JS_FILE}}"></script>
 <script src="js/vendor/parallax.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
+<script src="js/vendor/flipclock.min.js"></script>
 <script src="js/plugins.js"></script>
 
+<script>
+    // COUNTER
+    var tomorrow = moment().endOf('day').valueOf() + 1;
+    var now = moment().valueOf();
+    var interval = (tomorrow - now) / 1000;
+    var clock = $('#clock').FlipClock(interval, {
+        clockFace: 'HourlyCounter',
+        countdown: true,
+        language: 'ru'
+    });
+
+</script>
+<script>
+    $('.s-monitor').each(function (i, element) {
+
+        var offsetTop = $(this).data('top');
+        var offsetBottom = $(this).data('bottom');
+        var watcher = scrollMonitor.create(element, {top: offsetTop, bottom: offsetBottom});
+        var action = $(this).data('animated');
+        // watcher.lock();
+
+        watcher.enterViewport(function () {
+            // console.log(this + ' ' + action + ' ' + 'I have entered the viewport');
+            $(element).addClass(action)
+        });
+        watcher.exitViewport(function () {
+            // console.log(this + ' ' + action + ' ' + 'I have left the viewport');
+            $(element).removeClass(action)
+        });
+    });
+</script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     /*    (function (b, o, i, l, e, r) {

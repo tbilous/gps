@@ -14,13 +14,14 @@ var runSequence = require('run-sequence');
 var pkg = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
-var minifyCss = require('gulp-minify-css');
+var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglifyjs');
 var rename = require('gulp-rename');
 var imagemin = require('gulp-imagemin');
 
 
 var mainStylesheet = 'styles';
+var mainJs = 'main';
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -80,7 +81,7 @@ gulp.task('copy', [
     'copy:license',
     'copy:images',
     // 'copy:main.css',
-    'minify-css',
+    // 'copy:minify-css',
     'copy:misc'
 ]);
 
@@ -94,7 +95,7 @@ gulp.task('copy:index.html', function () {
     return gulp.src(dirs.src + '/index.html')
         .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
         .pipe(plugins.replace(/{{MAIN_JS_FILE}}/g, 'main.js'))
-        .pipe(plugins.replace(/{{MAIN_CSS_FILE}}/g, mainStylesheet + '.min.css'))
+        // .pipe(plugins.replace(/{{MAIN_CSS_FILE}}/g, mainStylesheet + '.min.css'))
         .pipe(plugins.replace(/{{CUT-START}}(.|\n)+?{{CUT-END}}/gm, ''))
         .pipe(gulp.dest(dirs.dist));
 });
@@ -121,20 +122,30 @@ gulp.task('copy:main.css', function () {
         .pipe(plugins.autoprefixer({
             browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
             cascade: false
-        }));
+        }))
+    .pipe(gulp.dest(dirs.dist + '/css/'));
+
 });
 
 gulp.task('copy:minify-css', function () {
-    return gulp.src(dirs.src + '/' + mainStylesheet + '.css')
-        .pipe(minifyCss())
-        .pipe(rename({suffix: '.min'}))
+    var banner = '/*! HTML5 Boilerplate v' + pkg.version +
+        ' | ' + pkg.license.type + ' License' +
+        ' | ' + pkg.homepage + ' */\n\n';
+    return gulp.src(dirs.src + '/css/' + mainStylesheet + '.css')
+        .pipe(plugins.header(banner))
+        .pipe(plugins.autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
+            cascade: false
+        }))
+        .pipe(cssmin())
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist' + '/css/'));
 });
 
 gulp.task('copy:uglify', function () {
     return gulp.src([
-            dirs.src + '/assets/js/*.js',
-            '!' + dirs.src + '/assets/js/*.min.js'
+            dirs.src + '/assets/js/*.*',
+            '!' + dirs.src + '/assets/js/main.js'
         ])
 
         .pipe(uglify('main.js', {
@@ -148,7 +159,7 @@ gulp.task('copy:images', function () {
         .pipe(imagemin({
             progressive: true,
             interlaced: true,
-            svgoPlugins: [{removeViewBox: false}, {removeUselessStrokeAndFill: false}]
+            svgoPlugins: [{ removeViewBox: false }, { removeUselessStrokeAndFill: false }]
         }))
         .pipe(gulp.dest('dist' + '/img'));
 });
@@ -160,10 +171,11 @@ gulp.task('copy:misc', function () {
         dirs.src + '/**/*',
         // Exclude the following files
         // (other tasks will handle the copying of these files)
-        '!' + dirs.src + '/css/' + mainStylesheet + '.css',
+        // '!' + dirs.src + '/css/' + mainStylesheet + '.css',
+        //  '!' + dirs.src + '/css/**/*',
         '!' + dirs.src + '/assets/js/*.js',
         '!' + dirs.src + '/img/**/*',
-        '!' + dirs.src + '/css/**/*',
+        '!' + dirs.src + '/js/' + mainJs + '.js',
         '!' + dirs.src + '/index.html'
 
     ], {

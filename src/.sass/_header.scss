@@ -59,8 +59,7 @@
     }
     background: url("../img/header-bg-lowres.jpg") no-repeat;
     background-size: cover;
-    //TEMP
-    min-height: 720px;
+    min-height: 730px;
     .main-header {
         text-align: center;
         font-weight: 600;
@@ -102,8 +101,8 @@
         }
         position: absolute;
         max-width: 295px;
-        top: 17em;
-        right: 5%;
+        top: 16em;
+        right: 1%;
         label {
             font-size: 11px;
         }
