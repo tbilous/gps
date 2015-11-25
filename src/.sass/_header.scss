@@ -38,6 +38,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        .i-icons::before{
+            font-size: 1em;
+            top: 1px;
+            padding: 0;
+        }
     }
     .start-modal {
         height: $navbar-height;

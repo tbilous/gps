@@ -225,29 +225,47 @@ a, button, input, textarea {
         top: 3px;
         font-size: 22px;
         display: block;
-        padding-top: 7px;
-        left: 7px;
+ /*       padding-top: 7px;
+        left: 7px;*/
         color: $brand-primary;
+        left: -24px;
+        padding-top: 4px;
     }
     &.airplane::before {
         content: '\f2c3';
-        left: -24px;
-        padding-top: 4px;
+
     }
     &.person::before {
         content: '\f213';
-        left: -24px;
-        padding-top: 4px;
+
     }
     &.telephone::before {
         content: '\f4b9';
-        left: -24px;
-        padding-top: 4px;
+
     }
     &.text::before {
         content: '\f11d';
-        left: -24px;
-        padding-top: 4px;
+
+    }
+    &.mail::before {
+        content: '\f2eb';
+
+    }
+}
+.i-social{
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.fb{
+        background-image: url("../img/icons/s-fb-icon.png");
+    }
+    &.tw{
+        background-image: url("../img/icons/s-tw-icon.png");
+    }
+    &.g{
+        background-image: url("../img/icons/s-g-icon.png");
     }
 }
 
@@ -294,7 +312,12 @@ a, button, input, textarea {
 
 .fa-chevron-down:before {
     content: "\f107";
-    font-family: 'FontAwesome';
+}
+.fa-chevron-up:before {
+    content: "\f077";
+}
+.fa-angle-up:before {
+    content: "\f106";
 }
 
 .fa-street-view:before {

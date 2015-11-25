@@ -1,0 +1,34 @@
+.section-contacts{
+    padding: 3em 0;
+    .section-body{
+        padding-top: 3em;
+    }
+    .contacts-warapper{
+        font-size: 1.2em;
+    }
+    .contact-heading {
+        margin-bottom: 2em;
+        li:nth-child(1) {
+            font-size: 1.6em;
+        }
+        li:nth-child(2) {
+            font-size: 1.2em;
+        }
+    }
+    .contact-group{
+        padding-left: 30px;
+        li{
+            padding: 5px;
+            font-size: 1.4em;
+            &.mail{
+                margin-top: 1.5em;
+            }
+        }
+        .i-icons::before{
+            font-size: 1em;
+        }
+    }
+    .contact-social{
+        margin-top: 3em;
+    }
+}
