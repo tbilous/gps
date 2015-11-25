@@ -46,6 +46,15 @@
         background: url("../img/input-bg.png") center no-repeat;
         background-size: cover;
     }
+    textarea{
+        width: 100%;
+        resize: none;
+        height: 120px;
+        border: none;
+        padding: 1em;
+        background: url("../img/textarea-bg.png") center no-repeat;
+        background-size: contain;
+    }
     input[type='submit'] {
         height: 42px;
         width: 100%;
@@ -70,5 +79,14 @@
     //TEMP
     .clock {
         min-height: 100px;
+    }
+    &.form-contacts{
+        .submit-wrapper{
+            background: none;
+            padding: 1em 0;
+            .input-group{
+                margin-bottom: 0;
+            }
+        }
     }
 }

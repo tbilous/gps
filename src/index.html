@@ -43,8 +43,8 @@
                     <li class="anchor active"><a href="#home">О нас</a></li>
                     <li><a class="anchor" href="#use">Применение</a></li>
                     <li><a class="anchor" href="#price">Цены</a></li>
-                    <li><a class="anchor" href="#contact">Описание</a></li>
-                    <li><a class="anchor" href="#contact">Схема подключения</a></li>
+                    <li><a class="anchor" href="#review">Описание</a></li>
+                    <li><a class="anchor" href="#schema">Схема подключения</a></li>
                     <li><a class="anchor" href="#contact">Контакты</a></li>
 
                 </ul>
@@ -428,6 +428,19 @@
                         <li>Точную цену</li>
                         <li>Нужный совет</li>
                     </ul>
+                    <input type="hidden" name="head" value="Сделай 80% предоплаты от стоимости прибора">
+
+                    <div class="input-block">
+                        <input class="phone-input " type="text" name="phone" placeholder="Введите телефон"
+                               required>
+                    </div>
+                    <div class="input-block">
+                        <input class="submit btn btn-md btn-info" type="submit" id="submitOfferForm"
+                               value="Оставить заявку">
+                    </div>
+                    <label for="submitOfferForm">
+                        <small>*Мы не распространяем ваши личные данные</small>
+                    </label>
 
                 </form>
             </div>
@@ -435,6 +448,93 @@
     </div>
 </div>
 
+<!--BLOCK5-->
+
+<section class="section-review" id="review">
+    <div class="section-header">
+        <h2>Описание прибора</h2>
+        <span class="line-icon"></span>
+    </div>
+    <div class="section-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img src="img/tracker.png" class="img-responsive" alt="tracker">
+                </div>
+                <div class="col-sm-7">
+                    <ul class="list-review light">
+                        <li>Мощная магнитная крышка - можно прочно прикрепить к железным элементам в автомобиле,
+                            портфеле или чемодана
+                        </li>
+                        <li>Емкая (9999) батарея-аккумулятор - более 2-х недель в ожидании и целая неделя в активном
+                            режиме
+                        </li>
+                        <li>Пыле и влагозащищенный корпус - не боится пыли, грязи и дождя</li>
+                        <li>Высокочуствительная антенна GPS приемника</li>
+                        <li>Точное определение координат - до 10 метров и четкое взаимодействие с сервером по GPRS</li>
+
+                    </ul>
+                    <button class="btn btn-lg btn-primary start-modal">ЗАКАЗАТЬ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--BLOCK6-->
+<section class="section-schema" id="schema">
+    <div class="section-header">
+        <h2>Схема подключения</h2>
+        <span class="line-icon"></span>
+        <h5 class="section-subheader light">Как подключить GPS мониторинг</h5>
+    </div>
+</section>
+
+<!--BLOCK7-->
+
+<section class="section-contacts" id="contacts">
+    <div class="section-header">
+        <h2>Контакты</h2>
+        <span class="line-icon"></span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <form class="body-form form-contacts form" id="contactForm">
+                    <div class="form-wrapper">
+                        <div class="form-header bold">
+                            <h3 class="heading">
+                                <span class="color-primary bold">Форма заявки</span>
+                            </h3>
+                        </div>
+                        <input type="hidden" name="head" value="2 месяца в подарок">
+
+                        <div class="input-group i-icons person">
+                            <input class="" type="text" name="name" placeholder="введите имя" required>
+                        </div>
+                        <div class="input-group i-icons telephone">
+                            <input class="phone-input" type="text" name="phone" placeholder="введите телефон"
+                                   required>
+                        </div>
+
+                        <div class="input-group i-icons text">
+                            <textarea class="phone-input" type="text" name="phone" placeholder="введите сообщение"></textarea>
+                        </div>
+
+                        <div class="submit-wrapper">
+                            <div class="input-group i-icons airplane">
+                                <input class="submit" type="submit" id="submitContactForm" value="Оставить заявку">
+                            </div>
+                            <label for="submitContactForm">
+                                <small>*Мы не распространяем ваши личные данные</small>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+    </div>
+</section>
 <!-- Add your site or application content here -->
 <p>Hello world! This is HTML5 Boilerplate.</p>
 

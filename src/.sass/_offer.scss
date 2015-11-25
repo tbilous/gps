@@ -1,45 +1,69 @@
-.offer{
-    .offer-text{
+.offer {
+    .offer-text {
         text-transform: uppercase;
-        padding: 2em 0;
+        padding: 10% 0 1em;
         max-width: 630px;
         margin: 0 auto;
     }
-    .offer-header{
+    .offer-header {
         font-size: 4em;
         font-weight: 600;
     }
-    .offer-subheader{
+    .offer-subheader {
         font-size: 3em;
         font-weight: 400;
     }
-    .offer-regular{
+    .offer-regular {
         font-size: 2em;
         font-weight: 300;
     }
+    @media (max-width: $screen-phone){
+        .offer-header {
+            font-size: 3em;
+        }
+        .offer-subheader {
+            font-size: 2em;
+        }
+        .offer-regular {
+            font-size: 1.2em;
+        }
+    }
 }
-.offer-form{
-    background-color: rgba(255,255,255,.5);
+
+.offer-form {
+    background-color: rgba(255, 255, 255, .5);
     padding: 2em;
-    p{
+    p {
         font-size: 1.2em;
     }
-    .phone-offer{
+    .phone-offer {
         list-style: url("../img/icons/phone-blackr-style.png");
-        li{
+        padding-left: 25%;
+        li {
             font-size: 2em;
             font-weight: 600;
         }
     }
-    .ask-header{
+    .ask-header {
         margin: 1.2em auto .8em;
         font-size: 1.8em;
         text-align: center;
     }
-    .offer-ask{
+    .offer-ask {
         list-style: url("../img/icons/offer-style.png");
-        li{
+        li {
             font-size: 1.2em;
         }
+    }
+    input {
+        width: 100%;
+        height: 2.5em;
+    }
+    input[type='text']{
+        border: 1px solid $brand-info;
+        padding-left: 1em;
+    }
+    .input-block {
+        margin-bottom: .5em;
     }
 }

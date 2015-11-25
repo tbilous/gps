@@ -172,7 +172,7 @@ a, button, input, textarea {
 }
 
 //FORMS
-.form-feedback {
+/*.form-feedback {
     background-color: white;
     padding: 2em 2em .5em;
     &.production-modal-form {
@@ -213,7 +213,7 @@ a, button, input, textarea {
     .header-form {
         margin: 0 0 1em;
     }
-}
+}*/
 
 .i-icons {
     position: relative;
@@ -241,6 +241,11 @@ a, button, input, textarea {
     }
     &.telephone::before {
         content: '\f4b9';
+        left: -24px;
+        padding-top: 4px;
+    }
+    &.text::before {
+        content: '\f11d';
         left: -24px;
         padding-top: 4px;
     }
