@@ -127,4 +127,56 @@ $(document).ready(function () {
         }
     });
 
+    // Lost count digit flow
+    function runDigitFlow() {
+        $('.lost-count').each(function (i, el) {
+            var targetValue = $(el).attr('data-value');
+            var curValue = 1;
+            //var curValue = parseInt($("[data-number]").html());
+            var intervalHandle = setInterval(function () {
+                var delta = Math.round(Math.max(Math.min((targetValue - curValue) / 7, 12), 1));
+                curValue = curValue + delta;
+                $(el).html(curValue);
+                if (curValue >= targetValue)
+                    clearInterval(intervalHandle);
+            }, 50);
+        });
+    }
+     //runDigitFlow()
+    //Scroll MONITOR
+    $('.s-monitor').each(function (i, element) {
+
+        if ($(element).get(0).hasAttribute("data-bottom")) {
+            var offsetBottom = $(this).data('bottom');
+        }
+        else{
+            var offsetBottom = 100
+        }
+        if ($(element).get(0).hasAttribute("data-top")) {
+            var offsetTop = $(this).data('top')
+        }
+        else{
+            var offsetTop = 100
+        }
+        var watcher = scrollMonitor.create(element, {top: offsetTop, bottom: offsetBottom});
+        var action = $(this).data('animated');
+        var delay = $(this).data('delay');
+
+        watcher.enterViewport(function () {
+            //console.log(this + ' ' + action + ' ' + 'I have entered the viewport');
+            if ($(element).get(0).hasAttribute("data-delay")) {
+                $(element).css('animation-delay', delay + 's')
+            }
+            if ($(element).get(0).hasAttribute('data-value')) {
+                runDigitFlow();  // RUN DIGIT FLOW .lost-count
+            }
+            $(element).addClass(action);
+            watcher.destroy
+        });
+        watcher.exitViewport(function () {
+            //console.log(this + ' ' + action + ' ' + 'I have left the viewport');
+            $(element).removeClass(action);
+            watcher.destroy
+        });
+    });
 });

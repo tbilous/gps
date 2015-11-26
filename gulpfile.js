@@ -14,9 +14,8 @@ var runSequence = require('run-sequence');
 var pkg = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
-var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglifyjs');
-var rename = require('gulp-rename');
+// var rename = require('gulp-rename');
 var imagemin = require('gulp-imagemin');
 
 
@@ -126,11 +125,12 @@ gulp.task('copy:main.css', function () {
     .pipe(gulp.dest(dirs.dist + '/css/'));
 
 });
+/*
 
 gulp.task('copy:minify-css', function () {
-    var banner = '/*! HTML5 Boilerplate v' + pkg.version +
+    var banner = '/!*! HTML5 Boilerplate v' + pkg.version +
         ' | ' + pkg.license.type + ' License' +
-        ' | ' + pkg.homepage + ' */\n\n';
+        ' | ' + pkg.homepage + ' *!/\n\n';
     return gulp.src(dirs.src + '/css/' + mainStylesheet + '.css')
         .pipe(plugins.header(banner))
         .pipe(plugins.autoprefixer({
@@ -141,6 +141,7 @@ gulp.task('copy:minify-css', function () {
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist' + '/css/'));
 });
+*/
 
 gulp.task('copy:uglify', function () {
     return gulp.src([

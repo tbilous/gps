@@ -229,7 +229,7 @@
                 <div class="lost-unit">
                     <img src="img/l-ava1.jpg" class="img-responsive center-block" alt="img">
 
-                    <div class="lost-count count1">999</div>
+                    <div class="lost-count count1 s-monitor" data-value="999">0</div>
                     <div class="lost-text">
                         <span class="text-nowrap">Пропавших детей</span> <span class="text-nowrap">в год</span>
                     </div>
@@ -237,7 +237,7 @@
                 <div class="lost-unit">
                     <img src="img/l-ava2.jpg" class="img-responsive center-block" alt="img">
 
-                    <div class="lost-count count2">999</div>
+                    <div class="lost-count count2 s-monitor" data-value="998">0</div>
                     <div class="lost-text">
                         <span class="text-nowrap">Пропавших стариков</span> <span class="text-nowrap">в год</span>
                     </div>
@@ -245,7 +245,7 @@
                 <div class="lost-unit">
                     <img src="img/l-ava3.jpg" class="img-responsive center-block" alt="img">
 
-                    <div class="lost-count count3">999</div>
+                    <div class="lost-count count3 s-monitor" data-value="997">0</div>
                     <div class="lost-text">
                         <span class="text-nowrap">Пропавших людей</span> <span class="text-nowrap">в год</span>
                     </div>
@@ -253,7 +253,7 @@
                 <div class="lost-unit">
                     <img src="img/l-ava4.jpg" class="img-responsive center-block" alt="img">
 
-                    <div class="lost-count count4">999</div>
+                    <div class="lost-count count4 s-monitor" data-value="996">0</div>
                     <div class="lost-text">
                         <span class="text-nowrap">Пропавших автомобилей</span> <span class="text-nowrap">в год</span>
                     </div>
@@ -261,7 +261,7 @@
                 <div class="lost-unit">
                     <img src="img/l-ava5.jpg" class="img-responsive center-block" alt="img">
 
-                    <div class="lost-count count5">999</div>
+                    <div class="lost-count count5 s-monitor" data-value="995">0</div>
                     <div class="lost-text">
                         <span class="text-nowrap">Пропавших багажей</span> <span class="text-nowrap">в год</span>
                     </div>
@@ -766,23 +766,8 @@
 
 </script>
 <script>
-    $('.s-monitor').each(function (i, element) {
 
-        var offsetTop = $(this).data('top');
-        var offsetBottom = $(this).data('bottom');
-        var watcher = scrollMonitor.create(element, {top: offsetTop, bottom: offsetBottom});
-        var action = $(this).data('animated');
-        // watcher.lock();
 
-        watcher.enterViewport(function () {
-            // console.log(this + ' ' + action + ' ' + 'I have entered the viewport');
-            $(element).addClass(action)
-        });
-        watcher.exitViewport(function () {
-            // console.log(this + ' ' + action + ' ' + 'I have left the viewport');
-            $(element).removeClass(action)
-        });
-    });
 </script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
